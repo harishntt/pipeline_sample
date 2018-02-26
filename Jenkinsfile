@@ -24,6 +24,18 @@ pipeline{
 
                    }
 
+                stage('Packaging Stage') {
+                        steps{
+                                withMaven(maven: 'mavenhome') {
+                                sh 'mvn package';
+                                }
+                        }
+
+
+                   }
+
+
+
 
 	}
 }
