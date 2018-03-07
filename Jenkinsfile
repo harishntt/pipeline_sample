@@ -6,9 +6,18 @@ pipeline{
 		stage('Compile Stage') {
 			steps{
                 		withMaven(maven: 'mavenhome') {
-				sh 'mvn clean compile';
+				sh 'mvn clean';
 			     	}
 			}
+
+
+                   }
+                stage('Compile Stage') {
+                        steps{
+                                withMaven(maven: 'mavenhome') {
+                                sh 'mvn compile';
+                                }
+                        }
 
 
                    }
